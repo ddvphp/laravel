@@ -21,6 +21,28 @@
 
 require __DIR__.'/../bootstrap/autoload.php';
 
+/* ****************************DdvRestfulApi模块使用开始**************************** */
+// 继承扩展 DdvRestfulApi
+class RestfulApi extends \DdvPhp\DdvRestfulApi\DdvRestfulApi
+{
+    // 根据需要进行继承扩展异常处理的格式
+    // public function onHandler($e)
+    // {
+    //   if ($e['isIgnoreError']===true) {
+    //     return;
+    //   }
+    //  var_dump('onHandler', $e);
+    // }
+    // 根据需要调整判断调试模式的方式
+    // public function isDevelopment(){
+    //   return defined('ENVIRONMENT') && ENVIRONMENT==='development';
+    // }
+}
+// 获取一个单例，必须通过单列模式，
+// 否则会有意想不到的问题 - 使用异常监听模块
+\RestfulApi::getInstance()->useHandler();
+/* ****************************DdvRestfulApi模块使用结束**************************** */
+
 /*
 |--------------------------------------------------------------------------
 | Turn On The Lights
