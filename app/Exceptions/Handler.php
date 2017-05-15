@@ -33,7 +33,7 @@ class Handler extends ExceptionHandler
     public function report(Exception $exception)
     {
         if($exception instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException){
-            \RestfulApi::getInstance()->echo404();
+            \DdvPhp\DdvRestfulApi\DdvRestfulApi::getInstance()->echo404();
         }else{
             \DdvPhp\DdvRestfulApi\Exception\Handler::exceptionHandler($exception);
         }
