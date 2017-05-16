@@ -19,8 +19,10 @@ Route::group(['middleware'=>[
     \DdvPhp\DdvRestfulApi\Middleware\AuthByLaravel::class
 ]],function(){
     Route::post('test/test11',function(){
-        var_dump(@$_SESSION);
-        $_SESSION['xxx']=222;
-        return [222];
+      //  throw new Exception("Error Processing Request", 1);
+        
+        return [
+            'lists'=>[22,45,6]
+        ];
     }) ;
 });
