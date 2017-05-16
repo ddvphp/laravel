@@ -24,7 +24,7 @@ require __DIR__.'/../bootstrap/autoload.php';
 /* ****************************DdvRestfulApi模块使用开始**************************** */
 // 获取一个单例，必须通过单列模式，
 // 否则会有意想不到的问题 - 使用异常监听模块
-\DdvPhp\DdvRestfulApi\DdvRestfulApi::getInstance()->useHandler();
+\DdvPhp\DdvRestfulApi::getInstance()->useHandler();
 /* ****************************DdvRestfulApi模块使用结束**************************** */
 
 /*
