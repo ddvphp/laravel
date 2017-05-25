@@ -14,14 +14,9 @@ use Illuminate\Http\Request;
 */
 
 Route::group(['middleware'=>[
-	// 初始化DdvRestfulApi解析模块和授权模块
+	  // 初始化DdvRestfulApi解析模块和授权模块
     \DdvPhp\DdvRestfulApi\Middleware\InitByLaravel::class,
-    // 清理会话信息
-    \DdvPhp\DdvRestfulApi\Middleware\ClearSessionByLaravel::class,
-    // 开始会话
-    \Illuminate\Session\Middleware\StartSession::class,
-    // 授权模块
-    \DdvPhp\DdvRestfulApi\Middleware\AuthByLaravel::class
+    \DdvPhp\DdvRestfulApi\Middleware\AuthSessionByLaravel::class
 ]],function(){
 	// 会话初始化
     Route::get('session/init',function(){

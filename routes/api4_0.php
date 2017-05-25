@@ -14,13 +14,11 @@ use Illuminate\Http\Request;
 */
 
 Route::group(['middleware'=>[
-    \DdvPhp\DdvRestfulApi\Middleware\ClearSessionByLaravel::class,
-    \Illuminate\Session\Middleware\StartSession::class,
-    \DdvPhp\DdvRestfulApi\Middleware\AuthByLaravel::class
+    \DdvPhp\DdvRestfulApi\Middleware\AuthSessionByLaravel::class
 ]],function(){
     Route::post('test/test11',function(){
       //  throw new Exception("Error Processing Request", 1);
-        
+
         return [
             'lists'=>[22,45,6]
         ];
