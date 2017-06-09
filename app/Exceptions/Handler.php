@@ -35,7 +35,7 @@ class Handler extends ExceptionHandler
         if($exception instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException){
             \DdvPhp\DdvRestfulApi::getInstance()->echo404();
         }else{
-            \DdvPhp\DdvRestfulApi\Exception\Handler::exceptionHandler($exception);
+            \DdvPhp\DdvException\Handler::exceptionHandler($exception);
         }
         // 不使用 自带异常模块
         // parent::report($exception);
