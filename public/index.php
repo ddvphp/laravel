@@ -23,6 +23,12 @@ define('LARAVEL_START', microtime(true));
 
 require __DIR__.'/../vendor/autoload.php';
 
+/* ****************************DdvRestfulApi模块使用开始**************************** */
+// 获取一个单例，必须通过单列模式，
+// 否则会有意想不到的问题 - 使用异常监听模块
+\DdvPhp\DdvRestfulApi::getInstance()->useHandler();
+/* ****************************DdvRestfulApi模块使用结束**************************** */
+
 /*
 |--------------------------------------------------------------------------
 | Turn On The Lights

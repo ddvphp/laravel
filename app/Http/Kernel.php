@@ -37,9 +37,13 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
+        'api1_0' => [
+            // 初始化
+            \DdvPhp\DdvRestfulApi\Middleware\InitByLaravel::class
+        ],
         'api' => [
-            'throttle:60,1',
-            'bindings',
+            //'throttle:60,1',
+            //'bindings',
         ],
     ];
 
