@@ -13,6 +13,14 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware'=>[
+    \DdvPhp\DdvRestfulApi\Middleware\Laravel\AuthSession::class
+]],function(){
+    Route::get('test/test11',function(){
+      //  throw new Exception("Error Processing Request", 1);
+
+        return [
+            'lists'=>[22,45,6]
+        ];
+    }) ;
 });
